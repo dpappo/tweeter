@@ -15,12 +15,23 @@ html {
  */
 
 body {
-  color: #545149;
+  color: #e0c374;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+main {
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #f4f1ec;
+
+}
