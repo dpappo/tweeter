@@ -1,0 +1,32 @@
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #55514a;
+  font-weight: 500;
+}
+
+label {
+  margin-bottom: 10px;
+
+}
+
+textarea {
+  border: none;
+  border-bottom: 5px solid #55514a;
+  padding: 10px;
+  background-color: #f4f1ec;
+}
+
+#text-second-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Bungee;
+}
+
+button {
+  background-color: #4056A1;
+  color:white;
+}
