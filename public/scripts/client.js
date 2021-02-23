@@ -1,16 +1,16 @@
-// /*
-//  * Client-side JS logic goes here
-//  * jQuery is already loaded
-//  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
-//  */
+/*
+ * Client-side JS logic goes here
+ * jQuery is already loaded
+ * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ */
 
 // let renderArticlesHTML = function(obj) {
-//   for (let tweet of obj) {
-//     $('main.container').append(htmlFor(tweet));
-//   }
+// for (let tweet in obj) {
+// $('main.container').append(createTweetElement(obj));
+// }
 // };
 
-// let htmlFor = function(tweet) {
+// let createTweetElement = function(tweet) {
 //   return `<section class="tweet-container">
 //   <article class="tweet">
 //     <header class="tweet-header">
@@ -28,31 +28,35 @@
 //   </article>`;
 // };
 
-// let tweets = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png",
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1613937740541
+// const tweetData = {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//     "handle": "@SirIsaac"
 //   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd"
-//     },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1614024140541
-//   }
-// ];
+//   "content": {
+//     "text": "If I have seen further it is by standing on the shoulders of giants"
+//   },
+//   "created_at": 1461116232227
+// };
 
 
+// $('main.container').append(`<section class="tweet-container">
+// <article class="tweet">
+//   <header class="tweet-header">
+//     <div class="fullName">
+//       <div class="icon">${tweetData.user.avatars}</div>
+//       ${tweetData.user.name}
+//     </div>
+//     <div class="userName">${tweetData.user.handle}</div>
+//   </header>
+//   <div class="tweet">${tweetData.content.tweet}</div>
+//   <footer class="tweet-footer">
+//     <div class="datePosted">${tweetData.created_at}</div>
+//     <div class="tweeterIcons">🚩 🔀 ❤️</div>
+//   </footer>
+// </article>`);
 
-// renderArticlesHTML(tweets);
+// renderArticlesHTML(tweetData);
+
+let VariableWithUniqueName = "";
