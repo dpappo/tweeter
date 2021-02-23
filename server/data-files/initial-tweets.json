@@ -8,7 +8,7 @@
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1613946793854
+    "created_at": 1613949333013
   },
   {
     "user": {
@@ -19,6 +19,52 @@
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1614033193854
+    "created_at": 1614035733013
+  },
+  {
+    "user": {
+      "name": "Christina",
+      "avatars": "https://pbs.twimg.com/profile_images/1282382759118483459/aK0lRqto_400x400.jpg",
+      "handle": "@floozyesq"
+    },
+    "content": {
+      "text": "me: it’s okay to be a person struggling with productivity during a prolonged crisis
+      my brain: not u though
+      me: not me though"
+    },
+    "created_at": "12:06 PM · Oct 7, 2020"
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd"
+    },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1614035733013
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd"
+    },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1614035733013
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd"
+    },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1614035733013
   }
 ]

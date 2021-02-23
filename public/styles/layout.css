@@ -24,6 +24,7 @@ body {
   justify-content: center;
 
 
+
 }
 
 /*
@@ -33,19 +34,21 @@ main {
   padding-left: 5%;
   padding-right: 5%;
   background-color: #f4f1ec;
+  background-image: url(../images/asfalt-dark.png);
 
 }
 
 article.tweet {
   border: 5px solid #55514b;
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
   margin: 15px;
   transition: 0.3s;
+  background-color: #f4f1ec
 }
 
 article.tweet:hover {
-  border: 5px solid #55514b;
   display: flex;
   flex-direction: column;
   margin: 15px;
@@ -103,3 +106,7 @@ div.userName {
 
 }
 
+.icon img {
+  max-width: 64px;
+  border-radius: 50%;
+}
