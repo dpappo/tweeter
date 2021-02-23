@@ -35,3 +35,41 @@ main {
   background-color: #f4f1ec;
 
 }
+
+article.tweet {
+  border: 5px solid #55514b;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 0.7em;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+div.tweet {
+  border-bottom: 5px solid #55514b;
+  width: 98%;
+  margin: auto;
+  padding: 15px;
+}
+
+div.fullName {
+  display: flex;
+  flex-direction: row;
+}
+
+div.userName {
+  color: #c5cce3
+}
