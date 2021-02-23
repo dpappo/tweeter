@@ -5,8 +5,22 @@ header.page-header {
   flex-direction:column;
   justify-content: center;
   align-items: center;
-  background-color: #72A130;
+  background-color: #8296A8;
   background-image: url(../images/arches.png);
   position: static;
   margin-top: 120px;
+}
+
+img#profile-photo {
+  max-width: 20%;
+}
+
+div#photo-holder {
+  display: flex;
+  justify-content: center;
+}
+
+h2#name {
+  color: white;
+  text-decoration:#4056A1 underline;
 }

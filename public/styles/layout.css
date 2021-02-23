@@ -68,7 +68,7 @@ article.tweet:hover div.userName{
 .tweet-header {
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  padding: 5px;
 }
 
 .tweet-footer {
@@ -90,6 +90,10 @@ div.tweet {
 div.fullName {
   display: flex;
   flex-direction: row;
+  margin: 10px;
+}
+div.icon {
+  margin: 10px;
 }
 
 div.userName {
@@ -98,3 +102,4 @@ div.userName {
   transition: 0.3s;
 
 }
+
