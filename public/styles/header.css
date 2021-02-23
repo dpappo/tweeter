@@ -7,4 +7,6 @@ header.page-header {
   align-items: center;
   background-color: #72A130;
   background-image: url(../images/arches.png);
+  position: static;
+  margin-top: 120px;
 }
