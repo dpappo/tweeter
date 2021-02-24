@@ -16,7 +16,7 @@ let renderTweet = function(tweet) {
     <header class="tweet-header">
       <div class="fullName">
         <div class="icon"><img src="${tweet.user.avatars}"></div>
-        <p>${tweet.user.name}</p>
+        <p class="username">${tweet.user.name}</p>
       </div>
       <div class="userName">${tweet.user.handle}</div>
     </header>

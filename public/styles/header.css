@@ -13,11 +13,12 @@ header.page-header {
 }
 
 img#profile-photo {
-  max-width: 20%;
+  max-width: 30%;
 }
 
 div#photo-holder {
   display: flex;
+  align-items: flex-start;
   justify-content: center;
 }
 
