@@ -99,30 +99,40 @@ let submitTweet = function(tweet) {
   </article>`;
 };
 
-$('#tweet-form').submit((event) => {
-  event.preventDefault();
-  const tweetData = ($('#tweet-form').serialize());
-  $.ajax({method: 'POST',
-    url: '../tweets',
-    data: tweetData});
-});
-
-$(".nav-prompt").click(() => {
-  $([document.documentElement, document.body]).animate({
-    scrollTop: $("section.new-tweet").offset().top - 125
-  }, 1000);
-  $('textarea').focus();
-});
-
 
 $(document).ready(function() {
+  //scroll from nav to new tweet with focus
+  $(".nav-prompt").click(() => {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("section.new-tweet").offset().top - 125
+    }, 1000);
+    $('textarea').focus();
+  });
+
+  //submit tweet handler
+  $('#tweet-form').submit((event) => {
+    event.preventDefault();
+    const tweetData = ($('#tweet-form').serialize());
+    console.log(tweetData);
+    if (tweetData === "text=") {
+      alert('Your tweet is bad and you should feel bad. Try adding some content ✍️');
+    } else if (tweetData.length > 145) {
+      alert("Too long, too long!! Try again with less than 140 characters.");
+    } else if (tweetData !== "text=") {
+      $.ajax({method: 'POST',
+        url: '../tweets',
+        data: tweetData});
+    }
+  });
+
+  // load tweets from db
   const loadTweet = function(handleData) {
     $.ajax({method: 'GET',
       url: '../tweets',
-      dataType: "json", success: function(data) {
-        console.log(data);
-        handleData(data);
-      }});
+      dataType: "json"
+    }).done(function(data) {
+      handleData(data);
+    });
   };
 
   loadTweet(createTweetElement);
