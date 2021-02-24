@@ -103,6 +103,12 @@ let submitNewTweet = function(tweet) {
   $(newTweet(tweet)).insertAfter('section.new-tweet');
 };
 
+// don't let users insert scripts
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 $(document).ready(function() {
   //scroll from nav to new tweet with focus
@@ -116,7 +122,7 @@ $(document).ready(function() {
   //submit tweet handler
   $('#tweet-form').submit((event) => {
     event.preventDefault();
-    const tweetData = ($('#tweet-text').val());
+    const tweetData = escape($('#tweet-text').val());
     console.log(tweetData);
     if (tweetData === "") {
       alert('Your tweet is bad and you should feel bad. Try adding some content ✍️');
