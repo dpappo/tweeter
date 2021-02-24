@@ -48,9 +48,6 @@ article.tweet {
   background-color: #f4f1ec
 }
 
-
-
-
 article.tweet:hover {
   display: flex;
   flex-direction: column;
@@ -67,7 +64,10 @@ article.tweet:hover {
 
 article.tweet:hover div.userName{
   transition: 0.3s;
-
+  opacity: 1;
+}
+article.tweet:hover div.tweeterIcons{
+  transition: 0.3s;
   opacity: 1;
 }
 
@@ -106,7 +106,10 @@ div.userName {
   color: #c5cce3;
   opacity: 0;
   transition: 0.3s;
-
+}
+div.tweeterIcons {
+  opacity: 0;
+  transition: 0.3s;
 }
 
 .icon img {

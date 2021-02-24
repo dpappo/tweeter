@@ -22,64 +22,11 @@ let renderTweet = function(tweet) {
     </header>
     <div class="tweet">${tweet.content.text}</div>
     <footer class="tweet-footer">
-      <div class="datePosted">${tweet.created_at}</div>
+      <div class="datePosted">${moment(tweet.created_at)}</div>
       <div class="tweeterIcons">🚩 🔀 ❤️</div>
     </footer>
   </article>`;
 };
-
-const tweetData = [
-  {"user": {
-    "name": "wint",
-    "avatars": "https://pbs.twimg.com/profile_images/847818629840228354/VXyQHfn0_400x400.jpg",
-    "handle": "@dril"
-  },
-  "content": {
-    "text": "i shou;ld be allowed on the roof of any building"
-  },
-  "created_at": "2:38 PM · Nov 15, 2020"},
-  {"user": {
-    "name": "ye 🌍",
-    "avatars": "https://pbs.twimg.com/profile_images/1353936799484301312/fyN3pz3__400x400.jpg",
-    "handle": "@yedoye_"
-  },
-  "content": {
-    "text": "every day I wake up and begin the 16 hour process of getting ready for bed"
-  },
-  "created_at": "3:41 PM · Feb 2, 2021"},{"user": {
-    "name": "Christina",
-    "avatars": "https://pbs.twimg.com/profile_images/1282382759118483459/aK0lRqto_400x400.jpg",
-    "handle": "@floozyesq"
-  },
-  "content": {
-    "text": "me: it’s okay to be a person struggling with productivity during a prolonged crisis \nmy brain: not u though \nme: not me though"
-  },
-  "created_at": "12:06 PM · Oct 7, 2020"},
-  {
-    "user": {
-      "name": "Dan Pappo",
-      "avatars": "./images/circle-cropped.png"
-      ,
-      "handle": "@dpappo"
-    },
-    "content": {
-      "text": "it's kind of crazy to consider how cheap books are; each one represents hundreds and hundreds or maybe thousands of hours of work, thinking, writing, editing, research, and interviewing....for a total cost of $10-15."
-    },
-    "created_at": "6:56 PM · Feb 4, 2021"
-  },
-  {
-    "user": {
-      "name": "Linus Tech Tips",
-      "avatars": "https://pbs.twimg.com/profile_images/1034493707553140736/cDlQGimm_400x400.jpg",
-      "handle": "@LinusTech" },
-    "content": {
-      "text": "tech tip: tell your PC that you appreciate it once in a while"
-    },
-    "created_at": "10:46 AM · Jan 26, 2021"
-  },
-  
-];
-
 
 let newTweet = function(tweet) {
   return `<section class="tweet-container">
@@ -93,7 +40,7 @@ let newTweet = function(tweet) {
     </header>
     <div class="tweet">${tweet}</div>
     <footer class="tweet-footer">
-      <div class="datePosted">${new Date}</div>
+      <div class="datePosted">${moment(new Date)}</div>
       <div class="tweeterIcons">🚩 🔀 ❤️</div>
     </footer>
   </article>`;
@@ -127,24 +74,27 @@ $(document).ready(function() {
 
     // empty tweet error
     if (tweetData === "") {
-      $('.validationError').text("Your tweet is bad and you should feel bad. Try adding some content ✍️").slideDown();
+      $('.validationError').text("Not enough tweet to tweet. Try adding some content ✍️").slideDown();
       setTimeout(function() {
         $('.validationError').empty();
         $('.validationError').slideUp();
       }, 3000);
-      
+
       // tweet > 140 char
     } else if (tweetData.length > 140) {
-      $('.validationError').text("Too long, too long!! Try again with less than 140 characters.").slideDown();
+      $('.validationError').text("Too long, too long!! Try again with less than 140 characters 📝").slideDown();
       setTimeout(function() {
         $('.validationError').empty();
         $('.validationError').slideUp();
       }, 3000);
+
+      //post case
     } else if (tweetData !== "") {
       $.ajax({method: 'POST',
         url: '../tweets',
         data: tweetData})
-        .done(submitNewTweet(tweetData));
+        .done(submitNewTweet(tweetData))
+        .then($("#tweet-text").val(""));
     }
   });
 
