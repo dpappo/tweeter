@@ -6,12 +6,12 @@
 
 let createTweetElement = function(array) {
   for (let i = 0; i < array.length; i++) {
-    $('main.container').append(renderTweet(array[i]));
+    $('#tweets-section').prepend(renderTweet(array[i]));
   }
 };
 
 let renderTweet = function(tweet) {
-  return `<section class="tweet-container">
+  return `
   <article class="tweet">
     <header class="tweet-header">
       <div class="fullName">
@@ -29,7 +29,7 @@ let renderTweet = function(tweet) {
 };
 
 let newTweet = function(tweet) {
-  return `<section class="tweet-container">
+  return `
   <article class="tweet">
     <header class="tweet-header">
       <div class="fullName">
@@ -47,7 +47,7 @@ let newTweet = function(tweet) {
 };
 
 let submitNewTweet = function(tweet) {
-  $(newTweet(tweet)).insertAfter('section.new-tweet');
+  $(newTweet(tweet)).prependTo('#tweets-section');
 };
 
 // don't let users insert scripts
