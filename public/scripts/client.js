@@ -81,7 +81,7 @@ const tweetData = [
 ];
 
 
-let submitTweet = function(tweet) {
+let newTweet = function(tweet) {
   return `<section class="tweet-container">
   <article class="tweet">
     <header class="tweet-header">
@@ -99,6 +99,10 @@ let submitTweet = function(tweet) {
   </article>`;
 };
 
+let submitNewTweet = function(tweet) {
+  $(newTweet(tweet)).insertAfter('section.new-tweet');
+};
+
 
 $(document).ready(function() {
   //scroll from nav to new tweet with focus
@@ -112,16 +116,17 @@ $(document).ready(function() {
   //submit tweet handler
   $('#tweet-form').submit((event) => {
     event.preventDefault();
-    const tweetData = ($('#tweet-form').serialize());
+    const tweetData = ($('#tweet-text').val());
     console.log(tweetData);
-    if (tweetData === "text=") {
+    if (tweetData === "") {
       alert('Your tweet is bad and you should feel bad. Try adding some content ✍️');
-    } else if (tweetData.length > 145) {
+    } else if (tweetData.length > 140) {
       alert("Too long, too long!! Try again with less than 140 characters.");
-    } else if (tweetData !== "text=") {
+    } else if (tweetData !== "") {
       $.ajax({method: 'POST',
         url: '../tweets',
-        data: tweetData});
+        data: tweetData})
+        .done(submitNewTweet(tweetData));
     }
   });
 
