@@ -57,28 +57,53 @@ const tweetData = [
   "created_at": "12:06 PM · Oct 7, 2020"},
   {
     "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
+      "name": "Dan Pappo",
+      "avatars": "./images/circle-cropped.png"
       ,
-      "handle": "@SirIsaac"
+      "handle": "@dpappo"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "it's kind of crazy to consider how cheap books are; each one represents hundreds and hundreds or maybe thousands of hours of work, thinking, writing, editing, research, and interviewing....for a total cost of $10-15."
     },
-    "created_at": 1461116232227
+    "created_at": "6:56 PM · Feb 4, 2021"
   },
   {
     "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "name": "Linus Tech Tips",
+      "avatars": "https://pbs.twimg.com/profile_images/1034493707553140736/cDlQGimm_400x400.jpg",
+      "handle": "@LinusTech" },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "tech tip: tell your PC that you appreciate it once in a while"
     },
-    "created_at": 1461113959088
+    "created_at": "10:46 AM · Jan 26, 2021"
   },
   
 ];
 
 createTweetElement(tweetData);
 
+let submitTweet = function(tweet) {
+  return `<section class="tweet-container">
+  <article class="tweet">
+    <header class="tweet-header">
+      <div class="fullName">
+        <div class="icon"><img src="./images/circle-cropped.png"></div>
+        <p class="username">Dan Pappo</p>
+      </div>
+      <div class="userName">dpappo</div>
+    </header>
+    <div class="tweet">${tweet}</div>
+    <footer class="tweet-footer">
+      <div class="datePosted">${tweet}</div>
+      <div class="tweeterIcons">🚩 🔀 ❤️</div>
+    </footer>
+  </article>`;
+};
+
+$('#submit-tweet').click((event) => {
+  event.preventDefault();
+  // let form = $(event).closest('form');
+  let form = event.target.parentNode.parentNode;
+  let jForm = $(form);
+  $('section.new-tweet:eq(0)').after(submitTweet(jForm.find('textarea').val()));
+});
