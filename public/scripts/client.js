@@ -94,7 +94,7 @@ let submitTweet = function(tweet) {
     </header>
     <div class="tweet">${tweet}</div>
     <footer class="tweet-footer">
-      <div class="datePosted">${tweet}</div>
+      <div class="datePosted">${new Date}</div>
       <div class="tweeterIcons">🚩 🔀 ❤️</div>
     </footer>
   </article>`;
@@ -105,5 +105,13 @@ $('#submit-tweet').click((event) => {
   // let form = $(event).closest('form');
   let form = event.target.parentNode.parentNode;
   let jForm = $(form);
-  $('section.new-tweet:eq(0)').after(submitTweet(jForm.find('textarea').val()));
+  let newTweet = submitTweet(jForm.find('textarea').val());
+  let postTweet = $('section.new-tweet:eq(0)').after(newTweet);
+});
+
+$(".nav-prompt").click(() => {
+  $([document.documentElement, document.body]).animate({
+    scrollTop: $("section.new-tweet").offset().top - 125
+  }, 1000);
+  $('textarea').focus();
 });

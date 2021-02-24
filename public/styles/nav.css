@@ -14,3 +14,7 @@ nav {
 nav span {
   font-family: 'Bungee', cursive;
 }
+
+.nav-prompt:hover {
+  cursor: pointer;
+}
