@@ -49,3 +49,14 @@ section.new-tweet {
 section.new-tweet:hover {
   box-shadow: inset 0 0 0 5px #4056A1;
 }
+
+div.validationError {
+  background-color: #fce4e4;
+  border: 5px solid #ff4a4d;
+  padding: 20px ;
+  border-radius: 20px;
+}
+
+.hideClass {
+  display: none
+}

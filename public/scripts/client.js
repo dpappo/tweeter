@@ -124,10 +124,22 @@ $(document).ready(function() {
     event.preventDefault();
     const tweetData = escape($('#tweet-text').val());
     console.log(tweetData);
+
+    // empty tweet error
     if (tweetData === "") {
-      alert('Your tweet is bad and you should feel bad. Try adding some content ✍️');
+      $('.validationError').text("Your tweet is bad and you should feel bad. Try adding some content ✍️").slideDown();
+      setTimeout(function() {
+        $('.validationError').empty();
+        $('.validationError').slideUp();
+      }, 3000);
+      
+      // tweet > 140 char
     } else if (tweetData.length > 140) {
-      alert("Too long, too long!! Try again with less than 140 characters.");
+      $('.validationError').text("Too long, too long!! Try again with less than 140 characters.").slideDown();
+      setTimeout(function() {
+        $('.validationError').empty();
+        $('.validationError').slideUp();
+      }, 3000);
     } else if (tweetData !== "") {
       $.ajax({method: 'POST',
         url: '../tweets',
