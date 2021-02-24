@@ -100,13 +100,18 @@ let submitTweet = function(tweet) {
   </article>`;
 };
 
-$('#submit-tweet').click((event) => {
+$('#tweet-form').submit((event) => {
   event.preventDefault();
+  const tweetData = ($('#tweet-form').serialize());
+  $.ajax({method: 'POST',
+    url: '../tweets',
+    data: tweetData});
   // let form = $(event).closest('form');
-  let form = event.target.parentNode.parentNode;
-  let jForm = $(form);
-  let newTweet = submitTweet(jForm.find('textarea').val());
-  let postTweet = $('section.new-tweet:eq(0)').after(newTweet);
+
+  // let form = event.target.parentNode.parentNode;
+  // let jForm = $(form);
+  // let newTweet = submitTweet(jForm.find('textarea').val());
+  // let postTweet = $('section.new-tweet:eq(0)').after(newTweet);
 });
 
 $(".nav-prompt").click(() => {
