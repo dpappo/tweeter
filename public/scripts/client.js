@@ -4,9 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-let createTweetElement = function(obj) {
-  for (let tweet of obj) {
-    $('main.container').append(renderTweet(tweet));
+let createTweetElement = function(array) {
+  for (let i = 0; i < array.length; i++) {
+    $('main.container').append(renderTweet(array[i]));
   }
 };
 
@@ -80,7 +80,6 @@ const tweetData = [
   
 ];
 
-createTweetElement(tweetData);
 
 let submitTweet = function(tweet) {
   return `<section class="tweet-container">
@@ -106,12 +105,6 @@ $('#tweet-form').submit((event) => {
   $.ajax({method: 'POST',
     url: '../tweets',
     data: tweetData});
-  // let form = $(event).closest('form');
-
-  // let form = event.target.parentNode.parentNode;
-  // let jForm = $(form);
-  // let newTweet = submitTweet(jForm.find('textarea').val());
-  // let postTweet = $('section.new-tweet:eq(0)').after(newTweet);
 });
 
 $(".nav-prompt").click(() => {
@@ -119,4 +112,19 @@ $(".nav-prompt").click(() => {
     scrollTop: $("section.new-tweet").offset().top - 125
   }, 1000);
   $('textarea').focus();
+});
+
+
+$(document).ready(function() {
+  const loadTweet = function(handleData) {
+    $.ajax({method: 'GET',
+      url: '../tweets',
+      dataType: "json", success: function(data) {
+        console.log(data);
+        handleData(data);
+      }});
+  };
+
+  loadTweet(createTweetElement);
+
 });
