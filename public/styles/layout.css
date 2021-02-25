@@ -60,6 +60,7 @@ article.tweet:hover {
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(143, 112, 112, 0.12);
   transition: 0.3s;
+  border: 5px solid #4056A1;
 }
 
 article.tweet:hover div.userName{
@@ -117,11 +118,6 @@ div.tweeterIcons {
   border-radius: 50%;
   transition: 0.3s;
 }
-.icon img:hover {
-  max-width: 128px;
-  border-radius: 50%;
-  transition: 0.3s;
-}
 
 .new-tweet h2 {
   text-decoration:#4056A1  underline;
@@ -130,5 +126,39 @@ div.tweeterIcons {
 
  p.username {
   text-decoration:#4056A1  underline;
+
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #f4f1ec;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #4057a17e;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px transparent #4057a17e;  /* creates padding around scroll thumb */
+}
+
+/* desktop layout */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction:row;
+    background-image: url(../images/asfalt-dark.png);
+
+  }
+
+  section.new-tweet {
+    position: static;
+    margin-top: 140px;
+  }
+
+  main.container {
+    border-radius: 20px;
+  }
 
 }

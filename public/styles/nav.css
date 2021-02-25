@@ -18,3 +18,12 @@ nav span {
 .nav-prompt:hover {
   cursor: pointer;
 }
+
+/* desktop layout */
+@media only screen and (min-width: 1024px) {
+  nav {
+    padding-left: 30%;
+  }
+  
+
+}

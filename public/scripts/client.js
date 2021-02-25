@@ -90,8 +90,7 @@ $(document).ready(function() {
     if (tweetData === "") {
       $('.validationError').text("Not enough tweet to tweet. Try adding some content ✍️").slideDown();
       setTimeout(function() {
-        $('.validationError').empty();
-        $('.validationError').slideUp();
+        $('.validationError').empty().slideUp();
       }, 3000);
 
       // tweet > 140 char
@@ -110,7 +109,10 @@ $(document).ready(function() {
         .done(() => {
           loadTweet(createTweetElement);
         })
-        .then($("#tweet-text").val(""));
+        .then(() => {
+          $("#tweet-text").val("");
+          $("output.counter").text("140");
+        });
     }
   });
 
