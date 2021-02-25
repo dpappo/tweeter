@@ -70,7 +70,6 @@ $(document).ready(function() {
   $('#tweet-form').submit((event) => {
     event.preventDefault();
     const tweetData = escape($('#tweet-text').val());
-    console.log(tweetData);
 
     // empty tweet error
     if (tweetData === "") {
@@ -90,11 +89,12 @@ $(document).ready(function() {
 
       //post case
     } else if (tweetData !== "") {
-      console.log("tweetData: " + tweetData);
       $.ajax({method: 'POST',
         url: '/tweets',
         data: {text: tweetData}})
-        .done(submitNewTweet(tweetData))
+        .done(() => {
+          loadTweet(createTweetElement);
+        })
         .then($("#tweet-text").val(""));
     }
   });
@@ -111,6 +111,7 @@ $(document).ready(function() {
 
   loadTweet(createTweetElement);
 
+  //hover and focus border for new tweet section
   $("#tweet-text").on("focus", function() {
     $("section.new-tweet").css("box-shadow", "inset 0 0 0 5px #4056A1");
   });
