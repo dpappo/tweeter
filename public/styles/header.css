@@ -1,3 +1,5 @@
+/* mobile design by default: */
+
 header.page-header {
   height: 400px;
   width: 100%;
@@ -7,7 +9,6 @@ header.page-header {
   align-items: center;
   background: rgb(64,86,161);
   background-image: linear-gradient(180deg, rgba(64,86,161,1) 0%, rgba(130,150,168,1) 50%, rgba(244,241,236,1) 100%);
-    /* background-image: url(../images/arches.png); */
   position: static;
   margin-top: 120px;
 }
@@ -27,6 +28,7 @@ h2#name {
   text-decoration:#4056A1 underline;
 }
 
+/* desktop layout */
 @media only screen and (min-width: 1024px) {
 
   header.page-header {
@@ -35,7 +37,4 @@ h2#name {
     padding-top: 5%;
     width: 60%;
   }
-
-
-
 }

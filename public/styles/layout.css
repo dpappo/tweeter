@@ -22,20 +22,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-
-
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
   padding-left: 5%;
   padding-right: 5%;
   background-color: #f4f1ec;
   background-image: url(../images/asfalt-dark.png);
-
 }
 
 article.tweet {
@@ -47,6 +44,10 @@ article.tweet {
   transition: 0.3s;
   background-color: #f4f1ec
 }
+
+/* shout out to Chris Coyier's pen here: 
+https://codepen.io/chriscoyier/pen/KKwNLyL 
+for the box shadow hover below */
 
 article.tweet:hover {
   display: flex;
@@ -99,6 +100,7 @@ div.fullName {
   flex-direction: row;
   margin: 10px;
 }
+
 div.icon {
   margin: 10px;
 }
@@ -129,6 +131,10 @@ div.tweeterIcons {
 
 }
 
+/* shout out to this tutorial: 
+https://www.digitalocean.com/community/tutorials/css-scrollbars 
+for the following */
+
 body::-webkit-scrollbar {
   width: 12px;               /* width of the entire scrollbar */
 }
@@ -143,13 +149,14 @@ body::-webkit-scrollbar-thumb {
   border: 3px transparent #4057a17e;  /* creates padding around scroll thumb */
 }
 
+
+
 /* desktop layout */
 @media only screen and (min-width: 1024px) {
   body {
     display: flex;
     flex-direction:row;
     background-image: url(../images/asfalt-dark.png);
-
   }
 
   section.new-tweet {
@@ -160,5 +167,4 @@ body::-webkit-scrollbar-thumb {
   main.container {
     border-radius: 20px;
   }
-
 }
