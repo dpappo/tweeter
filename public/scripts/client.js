@@ -58,6 +58,20 @@ const escape =  function(str) {
 };
 
 $(document).ready(function() {
+
+  // load tweets from db
+  const loadTweet = function(handleData) {
+    $.ajax({method: 'GET',
+      url: '../tweets',
+      dataType: "json"
+    }).done(function(data) {
+      handleData(data);
+    });
+  };
+
+  loadTweet(createTweetElement);
+
+
   //scroll from nav to new tweet with focus
   $(".nav-prompt").click(() => {
     $([document.documentElement, document.body]).animate({
@@ -93,23 +107,14 @@ $(document).ready(function() {
         url: '/tweets',
         data: {text: tweetData}})
         .done(() => {
+          $("#tweets-section").empty();
           loadTweet(createTweetElement);
         })
         .then($("#tweet-text").val(""));
     }
   });
 
-  // load tweets from db
-  const loadTweet = function(handleData) {
-    $.ajax({method: 'GET',
-      url: '../tweets',
-      dataType: "json"
-    }).done(function(data) {
-      handleData(data);
-    });
-  };
 
-  loadTweet(createTweetElement);
 
   //hover and focus border for new tweet section
   $("#tweet-text").on("focus", function() {
