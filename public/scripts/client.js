@@ -90,9 +90,10 @@ $(document).ready(function() {
 
       //post case
     } else if (tweetData !== "") {
+      console.log("tweetData: " + tweetData);
       $.ajax({method: 'POST',
-        url: '../tweets',
-        data: tweetData})
+        url: '/tweets',
+        data: {text: tweetData}})
         .done(submitNewTweet(tweetData))
         .then($("#tweet-text").val(""));
     }
@@ -109,5 +110,12 @@ $(document).ready(function() {
   };
 
   loadTweet(createTweetElement);
+
+  $("#tweet-text").on("focus", function() {
+    $("section.new-tweet").css("box-shadow", "inset 0 0 0 5px #4056A1");
+  });
+  $("#tweet-text").on("blur", function() {
+    $("section.new-tweet").css("box-shadow", "none");
+  });
 
 });
