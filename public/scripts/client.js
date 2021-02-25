@@ -6,13 +6,14 @@
 
 // Helper functions:
 
-let addTweetElement = function(tweets) {
+const addTweetElement = function(tweets) {
   for (let i = 0; i < tweets.length; i++) {
     $('#tweets-section').prepend(renderTweet(tweets[i]));
   }
 };
 
-let renderTweet = function(tweet) {
+//TODO update created_at to be relative
+const renderTweet = function(tweet) {
   return `<article class="tweet">
     <header class="tweet-header">
       <div class="fullName">
@@ -23,7 +24,7 @@ let renderTweet = function(tweet) {
     </header>
     <div class="tweet">${tweet.content.text}</div>
     <footer class="tweet-footer">
-      <div class="datePosted">${moment(tweet.created_at)}</div>
+      <div class="datePosted">${moment().to(tweet.created_at)}</div>
       <div class="tweeterIcons">🚩 🔀 ❤️</div>
     </footer>
   </article>`;

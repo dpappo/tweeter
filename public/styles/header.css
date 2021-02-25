@@ -34,7 +34,5 @@ h2#name {
   header.page-header {
     height: 100vmax;
     justify-content:start;  
-    padding-top: 5%;
-    width: 60%;
   }
 }
