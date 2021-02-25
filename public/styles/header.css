@@ -34,5 +34,6 @@ h2#name {
   header.page-header {
     height: 100vmax;
     justify-content:start;  
+    width: auto;
   }
 }

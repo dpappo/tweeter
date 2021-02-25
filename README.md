@@ -2,7 +2,21 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Built as a student project at Lighthouse Labs, this was a fun opportunity to practice HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node and Express back-end skills.
+
+[mobile layout of the app](public/images/mobile.png)
+[desktop layout of the app](public/images/desktop.png)
+[error handling](public/images/error.png)
+
+## Some features that I'm proud of
+- Desktop and mobile responsive layouts a lá media query
+- jQuery galore: especially the scroll down on nav bar compose click, and the border creation on focus on blur of new tweet textarea
+- An imported selection of some of my favorite tweets
+- Gorgeous error handling
+- A coloured scrollbar
+
+## Stretch!
+In the desktop layout, I wanted my header height to grow according the length of the page; the linear gradient is lovely, but currently it tops out at the size of the view port on render.
 
 ## Getting Started
 
@@ -15,3 +29,6 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body-parser
+- Chance
+- Moment JS
