@@ -65,6 +65,7 @@ $(document).ready(function() {
       url: '../tweets',
       dataType: "json"
     }).done(function(data) {
+      $("#tweets-section").empty();
       handleData(data);
     });
   };
@@ -107,7 +108,6 @@ $(document).ready(function() {
         url: '/tweets',
         data: {text: tweetData}})
         .done(() => {
-          $("#tweets-section").empty();
           loadTweet(createTweetElement);
         })
         .then($("#tweet-text").val(""));
