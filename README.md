@@ -3,11 +3,11 @@
 Tweeter is a simple, single-page Twitter clone.
 
 Built as a student project at [Lighthouse Labs](https://lighthouselabs.ca), this was a fun opportunity to practice HTML, CSS, JS, jQuery and AJAX front-end skills, and Node and Express back-end skills.
-
+<p align="center">
 ![desktop layout of the app](public/images/desktopgif.gif)  
 ![mobile error handling](public/images/mobilegif.gif)  
 ![mobile layout of the app](public/images/mobile.png)
-
+</p>
 ## Some features that I'm proud of
 - Desktop and mobile responsive layouts a lá media query
 - jQuery galore: especially the scroll down on nav bar compose click, and the border creation on focus on blur of new tweet textarea
